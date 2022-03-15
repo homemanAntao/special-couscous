@@ -1,0 +1,36 @@
+server:
+  port: 8002
+
+#mytais配置
+mybatis:
+  type-aliases-package: com.antao.springcloud.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+#spring配置
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db02?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+#eureka服务注册配置
+eureka:
+  client:
+    #register-with-eureka: false
+    #fetch-registry: false
+    service-url:
+
+      #（单个eureka服务发布）defaultZone: http://localhost:7001/eureka/ 这里集群的注册的顺序一定要保证第一个可用
+      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7001.com:7001/eureka/
+  instance:
+      instance-id: springcloud-provider-dept8002 #修改eureka上面的默认描述信息
+
+#服务信息,可以用来配置服务的一些信息 如开发者 作用描述等
+info:
+  app.name: antao-springcloud-dept
+  user.name: antao
+

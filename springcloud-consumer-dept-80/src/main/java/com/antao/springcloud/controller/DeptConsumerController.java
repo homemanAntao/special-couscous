@@ -20,7 +20,9 @@ import java.util.List;
 @RestController
 public class DeptConsumerController {
 
-    public static final String REST_URL_PREFIX = "http://localhost:8001";
+    //通过ribbon实现的时候，这里地址应该是一个变量 ，通过服务名来访问
+//    public static final String REST_URL_PREFIX = "http://localhost:8001";
+    public static final String REST_URL_PREFIX = "http://SPRINGCLOUD-PROVIDER-DEPT";
     //消费端不应该有service层
     //restTemplate restful请求模板重要的参数（url，Map---请求实体， Class<T> responseType---响应方式）
     @Autowired

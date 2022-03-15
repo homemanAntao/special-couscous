@@ -12,6 +12,8 @@
         <module name="springcloudeureka7002" />
         <module name="springcloudeureka7003" />
         <module name="springcloudproviderdept8001" />
+        <module name="springcloudproviderdept8002" />
+        <module name="springcloudproviderdept8003" />
       </profile>
     </annotationProcessing>
   </component>
